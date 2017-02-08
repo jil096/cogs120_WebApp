@@ -1,0 +1,10 @@
+{
+    "name": "pcx/cogs120_web-app",
+    "authors": [
+        {
+            "name": "pharess9",
+            "email": "faress@email.com"
+        }
+    ],
+    "require": {}
+}
