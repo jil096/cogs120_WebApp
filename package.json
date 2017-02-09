@@ -1,0 +1,23 @@
+{
+  "name": "cogs120_webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pharess9/cogs120_WebApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pharess9/cogs120_WebApp/issues"
+  },
+  "homepage": "https://github.com/pharess9/cogs120_WebApp#readme"
+}
