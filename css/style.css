@@ -49,3 +49,9 @@
     font-size: 16px;
     font-family: 'Lato', sans-serif;    
 }
+
+.w3-afBlue,.w3-hover-white:hover
+{
+    color:#000!important;
+    background-color:#5d8aa8!important
+}

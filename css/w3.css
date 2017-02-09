@@ -35,4 +35,8 @@
 .w3-navbar a,.w3-topnav a,.w3-sidenav a,.w3-dropdown-content a,.w3-accordion-content a,.w3-dropnav a{text-decoration:none!important}
 .w3-navbar .w3-opennav.w3-right{float:right!important}
 
-.w3-white,.w3-hover-white:hover{color:#000!important;background-color:#fff!important}
+.w3-afBlue,.w3-hover-white:hover
+{
+	color:#000!important;
+	background-color:#5d8aa8!important
+}
