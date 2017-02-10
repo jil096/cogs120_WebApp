@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html>
+
+<head>
+	<title>UCSD Commuters</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  	<link rel="stylesheet" href="css/style.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="css/w3.css">
+  	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="js/submit.js"></script>
+
+</head>
+<body>
+	<div class="topbar">
+		<ul class="w3-navbar w3-afBlue w3-wide w3-padding-8 w3-card-2">
+    		<li>
+      			<a href="comm.html" class="w3-margin-left"><b>UCSD</b> Commuters</a>
+    		</li>
+    		<!-- Float links to the right. Hide them on small screens -->
+    		<li class="w3-right w3-hide-small">
+      			<a href="#about" class="w3-left">Help</a>
+      			<a href="login.html" class="w3-left w3-margin-right">Sign Out</a>
+    		</li>
+  		</ul>
+	</div>
+
+	<h3>My Friend List</h3>
+	<p>Message a friend to pick me up</p>
+	<ul>
+		<ol><i class="fa fa-square-o fa-fw w3-margin-right"></i>Mary</ol>
+		<ol><i class="fa fa-square-o fa-fw w3-margin-right"></i>John</ol>
+		<ol><i class="fa fa-square-o fa-fw w3-margin-right"></i>Colin</ol>
+	</ul>
+
+	<textarea rows="4" cols="50">Hi, guys...</textarea>
+
+	<div id = "message">
+		<button id = "sendM" class="mybtn btn btn-default" onclick="PopAlert()">Send message</a></button>
+	</div>
+	
+	<br>
+	<footer class="w3-container w3-theme-d5 w3-afBlue">
+    	<p>Team Boba -- Cogs 120 -- Winter2017</p>
+  </footer>
+  <script type="text/javascript">
+  	function PopAlert(){
+  		alert("Messages have been sent! ");
+  		$("#sendM").hide();
+  		$("#message").append("<button class=\"mybtn btn btn-default\"><a href=\"index.html\">Back to Homepage</a></button>");
+  	}
+  </script>
+</body>
+</html>
