@@ -1,0 +1,103 @@
+<html lang="en">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">   
+	<link rel="stylesheet" type="text/css" href="style_set/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script type="text/javascript">
+    var app = angular.module('myapp',[])
+        .controller('CalenderCtrl',function($scope){
+            $scope.arr=[
+            {start:'06.00',end:'06.30 AM'},
+            {start:'07.00',end:'07.30 AM'},
+            {start:'08.00',end:'08.30 AM'},
+            {start:'09.00',end:'09.30 AM'},
+            {start:'10.00',end:'10.30 AM'},
+            {start:'11.00',end:'11.30 AM'},
+            {start:'12.00',end:'12.30 PM'},
+            {start:'01.00',end:'01.30 PM'},
+            {start:'02.00',end:'02.30 PM'},
+            {start:'03.00',end:'03.30 PM'},
+            {start:'04.00',end:'04.30 PM'},
+            {start:'05.00',end:'05.30 PM'},
+            {start:'06.00',end:'06.30 PM'},
+            {start:'07.00',end:'07.30 PM'},
+            {start:'08.00',end:'08.30 PM'},
+            {start:'09.00',end:'09.30 PM'},
+            {start:'10.00',end:'10.30 PM'},
+            ];
+
+            $scope.days = ['Sunday', 'MonDay','TuesDay','Wednesday','Thursday','Friday','Saturday'];
+        });
+    </script>
+  </head>
+
+  <body ng-app="myapp" ng-controller="CalenderCtrl">
+    <nav class="navbar navbar-light bg-faded header">
+        <div class="col-md-1">
+            <img src="img/comlogo.png"/>
+        </div>        
+        <div class="navbar-header col-md-3">
+        <a class="navbar-brand" href="#" style="color: white">USSD Commuters</a>
+        </div>        
+        <div class="col-md-5 text-left" style="font-size:16px; color: white">
+            <div style="margin-top: 8px">
+            <i class="fa fa-calendar" aria-hidden="true"></i> Calender <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            <i class="fa fa-refresh" aria-hidden="true"></i> Pairing  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            <i class="fa fa-gift" aria-hidden="true"></i> Compensation <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            <i class="fa fa-handshake-o" aria-hidden="true"></i> Confirmation
+            </div>
+        </div>        
+    </nav>    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="caluserbox">
+                    <img src="img/user.png"/>
+                    <h1>Denise T</h1>
+                    <p>Sophomore in CogSci</p>
+                </div>
+                <div>
+                    <a href="#location" onclick="w3_close()" class="w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
+                    <a style="display: block" href="#contact" onclick="w3_close()" class="w3-padding"><i class="fa fa-location-arrow fa-fw w3-margin-right"></i>LOCATION</a>                    
+                    <a href="#contact" onclick="w3_close()" class="w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>                    
+                </div>
+                <div class="soclink">
+                    <div class="w3-section w3-padding-top w3-large">
+                        <a href="#" class="w3-hover-white w3-hover-text-indigo w3-show-inline-block"><i class="fa fa-facebook-official"></i></a>
+                        <a href="#" class="w3-hover-white w3-hover-text-purple w3-show-inline-block"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="w3-hover-white w3-hover-text-yellow w3-show-inline-block"><i class="fa fa-snapchat"></i></a>
+                        <a href="#" class="w3-hover-white w3-hover-text-light-blue w3-show-inline-block"><i class="fa fa-twitter"></i></a>
+                    </div>                                        
+                </div>
+            </div>
+            <div class="col-md-10">
+                <h3>Calender</h3>
+                <div class="row seven-cols">
+                    <div class="col-md-1">Sunday</div>
+                    <div class="col-md-1">MonDay</div>
+                    <div class="col-md-1">TuesDay</div>
+                    <div class="col-md-1">Wednesday</div>
+                    <div class="col-md-1">Thursday</div>
+                    <div class="col-md-1">Friday</div>
+                    <div class="col-md-1">Saturday</div>
+                </div>
+                <div class="row seven-cols caltime">
+                    <div class="col-md-1" ng-repeat="day in days">
+                        <div class="col-md-12" ng-repeat="time in arr">
+                            <button type="button" class="btn btn-default">{{time.start}}</button>/<button type="button" class="btn  btn-default">{{time.end}}</button>
+                        </div>
+                    </div>                                                                               
+                </div>                
+            </div>
+        </div>
+        <div class="row footer">
+            <div class="col-md-11 box"></div>
+            <div class="col-md-1 box"></div>        
+        </div>
+    </div>
+  </body>
+</html>
