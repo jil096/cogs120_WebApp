@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" type="text/css" href="css/stepBar.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--script src="js/introHCI.js"></script-->
 </head>
@@ -20,13 +20,13 @@
             <img src="img/comlogo.png"/>
         </li>
         <li>
-      			<a href="index.html" class="w3-margin-left"><b>UCSD</b> Commuters</a>
+      			<a href="index.html" class="w3-margin-left w3-text-white"><b>UCSD</b> Commuters</a>
     		</li>
 
     		<!-- Float links to the right. Hide them on small screens -->
     		<li class="w3-right w3-hide-small">
-      			<a href="help.html" class="w3-left">Help</a>
-      			<a href="login.html" class="w3-left w3-margin-right">Sign Out</a>
+      			<a href="help.html" class="w3-left w3-text-white">Help</a>
+      			<a href="login.html" class="w3-left w3-margin-right w3-text-white">Sign Out</a>
     		</li>
   		</ul>
 	</div>
@@ -65,9 +65,17 @@
     <!--a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-opennav w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span-->
 
-    <h1><b>Calendar</b></h1>
+    <div class="container">
+        <ul class="progressbar">
+            <li class="active">Calendar</li>
+            <li>Pairing</li>
+            <li>Compensation </li>
+            <li>Confirmation</li>
+        </ul>
+    </div>
+   
 
-    <div class="w3-section w3-bottombar w3-padding-16 w3-white fa w3-margin-right">
+    <!--div class="w3-section w3-bottombar w3-padding-16 w3-white fa w3-margin-right">
       <i style="font-size:24px">&#xf073;  <font color = "green"><strong>Calendar</strong></font> </i>
       <i style="font-size:24px" >&#xf101;</i>
       <i style="font-size:24px">&#xf021; Pairing </i>
@@ -76,17 +84,18 @@
       <i style="font-size:24px" >&#xf101; </i>
       <i style="font-size:24px">&#xf2b5; Confirmation </i>
 
-    </div>
+    </div-->
 
   </header>
   <img src="img/calendar.png" style = "width:70%">
 
+  <button class="mybtn btn btn-default"><a href="pairing.html">BACK</a></button>
   <button class="mybtn btn btn-default"><a href="pairing.html">NEXT</a></button>
 
   </div>
   <br>
   <footer class="w3-container w3-theme-d5 w3-afBlue">
-    <p>Team Boba -- Cogs 120 -- Winter2017</p>
+    <p class = "w3-text-white">Team Boba -- Cogs 120 -- Winter2017</p>
   </footer>
 <script>
 // Script to open and close sidenav

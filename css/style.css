@@ -31,7 +31,12 @@
     color: #bbbbbb;
 }
 
+.userbox img{
+
+}
+
 .buttonbox{
+
     margin-top: 40px;
     width: 100%;
     height:250px;    
@@ -39,19 +44,50 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);    
     text-align: center;
 }
+
+
 .buttonbox .mybtn{
     display:block;
     margin:30px auto;
-    width: 80%;
+    width: 60%;
     background-color: #CCC;
     color:darkslategray;
-    border-radius: 0px;
+    border-radius: 10px;
     font-size: 16px;
     font-family: 'Lato', sans-serif;    
 }
 
+.buttonboxD{
+    
+    height:190px;    
+  
+}
 .w3-afBlue,.w3-hover-white:hover
 {
     color:#000!important;
-    background-color:#5d8aa8!important
+    background-color:#466283!important
+}
+
+.topbar a{
+    font-size: 100%;
+}
+
+.select {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+.leftMargin, .lefrMargin a{
+    margin-left: 20px;
+    margin-bottom:10px;
+}
+.w3-section{
+    margin-top:16px!important;
+    margin-bottom:16px!important;
+}
+.indent-container h3, .indent-container p{
+    margin-left: 20px;
+    text-indent: 20px;
 }
