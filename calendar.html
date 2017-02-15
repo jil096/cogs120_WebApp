@@ -3,12 +3,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">    
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">   
-	<link rel="stylesheet" type="text/css" href="style_set/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">   
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stepBar.css">
+    <link rel="stylesheet" type="text/css" href="css/styleph.css" />
+
+
     <script type="text/javascript">
-    var app = angular.module('myapp',[])
+    var app = angular.module('myapp',['ui.bootstrap'])
         .controller('CalenderCtrl',function($scope){
             $scope.arr=[
             {start:'06.00',end:'06.30 AM'},
@@ -31,27 +37,38 @@
             ];
 
             $scope.days = ['Sunday', 'MonDay','TuesDay','Wednesday','Thursday','Friday','Saturday'];
+            $scope.selarr= [];
+            $scope.select = function(select, day,time){
+              if(select==true){
+                $scope.selarr.push({day:day,time:time});
+              }else{
+                    index = -1;
+                    for(var i = 0, len = $scope.selarr.length; i < len; i++) {
+                        if ($scope.selarr[i].day === day && $scope.selarr[i].time === time) {
+                            index = i;
+                            $scope.selarr.splice(index,1);
+                            break;
+                        }
+                    }
+              }
+            }
         });
     </script>
   </head>
 
   <body ng-app="myapp" ng-controller="CalenderCtrl">
-    <nav class="navbar navbar-light bg-faded header">
-        <div class="col-md-1">
-            <img src="img/comlogo.png"/>
-        </div>        
-        <div class="navbar-header col-md-3">
-        <a class="navbar-brand" href="#" style="color: white">USSD Commuters</a>
-        </div>        
-        <div class="col-md-5 text-left" style="font-size:16px; color: white">
-            <div style="margin-top: 8px">
-            <i class="fa fa-calendar" aria-hidden="true"></i> Calender <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            <i class="fa fa-refresh" aria-hidden="true"></i> Pairing  <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            <i class="fa fa-gift" aria-hidden="true"></i> Compensation <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            <i class="fa fa-handshake-o" aria-hidden="true"></i> Confirmation
-            </div>
-        </div>        
-    </nav>    
+	<div class="topbar">
+		<ul class="w3-navbar w3-afBlue w3-wide w3-padding-8 w3-card-2">
+    		<li>
+      			<a href="index.html" class="w3-margin-left w3-text-white"><b>UCSD</b> Commuters</a>
+    		</li>
+    		<!-- Float links to the right. Hide them on small screens -->
+    		<li class="w3-right w3-hide-small">
+      			<a href="help.html" class="w3-left w3-text-white">Help</a>
+      			<a href="login.html" class="w3-left w3-margin-right w3-text-white">Sign Out</a>
+    		</li>
+  		</ul>
+	</div>   
     <div class="container">
         <div class="row">
             <div class="col-md-2">
@@ -75,6 +92,17 @@
                 </div>
             </div>
             <div class="col-md-10">
+                <div class="row">
+                  <div class="col-md-8 text-left" style="font-size:16px; color:gray">
+                      <div style="margin-top: 8px">
+                      <i class="fa fa-calendar" aria-hidden="true"></i> Calender <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                      <i class="fa fa-refresh" aria-hidden="true"></i> Pairing  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                      <i class="fa fa-gift" aria-hidden="true"></i> Compensation <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                      <i class="fa fa-handshake-o" aria-hidden="true"></i> Confirmation
+                      </div>
+                  </div>                     
+                </div>
+
                 <h3>Calender</h3>
                 <div class="row seven-cols">
                     <div class="col-md-1">Sunday</div>
@@ -88,10 +116,19 @@
                 <div class="row seven-cols caltime">
                     <div class="col-md-1" ng-repeat="day in days">
                         <div class="col-md-12" ng-repeat="time in arr">
-                            <button type="button" class="btn btn-default">{{time.start}}</button>/<button type="button" class="btn  btn-default">{{time.end}}</button>
+                            <button type="button" class="btn btn-default" ng-model="sel" ng-click="select(sel,day,time)" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{time.start}}/{{time.end}}</button>
                         </div>
                     </div>                                                                               
-                </div>                
+                </div>
+                <div class="row">
+                    selection : {{selarr}}
+                </div>
+                <div class="row">
+                  <div class="col-md-3 col-md-offset-9 text-right" style="margin-top: 10px">
+                      <a href="index.html" class="btn btn-primary">PREVIOUS</a>
+                      <a href="#" class="btn btn-primary">NEXT</a>
+                  </div>
+                </div>
             </div>
         </div>
         <div class="row footer">

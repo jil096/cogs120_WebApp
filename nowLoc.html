@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html>
+
+<head>
+	<title>UCSD Commuters</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--script src="js/introHCI.js"></script-->
+</head>
+<body>
+	<div class="topbar">
+		<ul class="w3-navbar w3-afBlue w3-wide w3-padding-8 w3-card-2">
+    		<li>
+      			<a href="index.html" class="w3-margin-left w3-text-white"><b>UCSD</b> Commuters</a>
+    		</li>
+    		<!-- Float links to the right. Hide them on small screens -->
+    		<li class="w3-right w3-hide-small">
+      			<a href="help.html" class="w3-left w3-text-white">Help</a>
+      			<a href="login.html" class="w3-left w3-margin-right w3-text-white">Sign Out</a>
+    		</li>
+  		</ul>
+	</div>
+
+	<h3>Where are you right now?</h3>
+	<p> Choose from below</p>
+	<form class = "leftMargin">
+  		<select id="stops" name="">
+    		<option value="au">Gilman Dr.</option>
+   			<option value="ca">La Regencia</option>
+    		<option value="usa">UTC</option>
+  		</select>
+	</form>
+	<div class="leftMargin">
+		<button class="mybtn btn btn-default"><a href="Pickup.html">Confirm</a></button>
+		<button class="mybtn btn btn-default"><a href="index.html">Cancel</a></button>
+	</div>
+	
+	<br> 
+	<footer class="w3-container w3-theme-d5 w3-afBlue">
+    	<p class= "w3-text-white">Team Boba -- Cogs 120 -- Winter2017</p>
+  </footer>
+</body>
+</html>
