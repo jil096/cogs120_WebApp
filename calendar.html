@@ -15,7 +15,7 @@
 
     <script type="text/javascript">
     var app = angular.module('myapp',['ui.bootstrap'])
-        .controller('CalenderCtrl',function($scope){
+        .controller('CalenderCtrl',function($scope, $http){
             var active='calendar';
             $scope.getclass  = function(current){
                 return 'active';
@@ -56,6 +56,14 @@
                         }
                     }
               }
+            }
+
+            $scope.create_json = function(){
+                $http({
+                    method:'POST',
+                    url   :'json/json.php',
+                    data  :$scope.selarr
+                });
             }
         });
     </script>
@@ -142,7 +150,7 @@
                 <div class="row">
                   <div class="col-md-3 col-md-offset-9 text-right" style="margin-top: 10px">
                       <a href="index.html" class="btn btn-primary">PREVIOUS</a>
-                      <a href="#" class="btn btn-primary">NEXT</a>
+                      <a href="#" class="btn btn-primary" ng-click="create_json()">NEXT</a>
                   </div>
                 </div>
             </div>
