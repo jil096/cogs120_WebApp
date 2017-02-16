@@ -63,6 +63,8 @@
                     method:'POST',
                     url   :'json/json.php',
                     data  :$scope.selarr
+                }).then(function(result){
+                    alert("Files saved at json/file.json");
                 });
             }
         });
