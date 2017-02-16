@@ -6,45 +6,66 @@
 	<title>UCSD Commuters</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-  	<link rel="stylesheet" href="css/style.css">
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  	<link rel="stylesheet" href="css/w3.css">
-  	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/w3.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="js/submit.js"></script>
+
+  <style>
+    input, label {
+      line-height: 1.5em;
+    }
+  </style>
+  
 
 </head>
 <body>
 	<div class="topbar">
 		<ul class="w3-navbar w3-afBlue w3-wide w3-padding-8 w3-card-2">
+        <li>
+            <img src="img/comlogo.png"/>
+        </li>
     		<li>
-      			<a href="index.html" class="w3-margin-left"><b>UCSD</b> Commuters</a>
+      			<a href="index.html" class="w3-margin-left w3-text-white"><b>UCSD</b> Commuters</a>
     		</li>
     		<!-- Float links to the right. Hide them on small screens -->
-    		<li class="w3-right w3-hide-small">
+    		<li class="w3-right w3-hide-small w3-text-white">
       			<a href="help.html" class="w3-left">Help</a>
       			<a href="login.html" class="w3-left w3-margin-right">Sign Out</a>
     		</li>
   		</ul>
 	</div>
+  <div style = "margin: 30px">
+	 <h3>My Friend List</h3>
+	 <p>Message a friend to pick me up</p>
 
-	<h3>My Friend List</h3>
-	<p>Message a friend to pick me up</p>
-	<ul>
-		<ol><i class="fa fa-square-o fa-fw w3-margin-right"></i>Mary</ol>
-		<ol><i class="fa fa-square-o fa-fw w3-margin-right"></i>John</ol>
-		<ol><i class="fa fa-square-o fa-fw w3-margin-right"></i>Colin</ol>
-	</ul>
+  <form>
+    <div>
+      <input type="radio" name="friend" value="Mary" id="orange">
+      <label for="orange">Mary</label>
+    </div>
+    <div>
+      <input type="radio" name="friend" value="John" id="apple">
+      <label for="apple">John</label>
+    </div>
+    <div>
+      <input type="radio" name="friend" value="Colin" id="banana">
+      <label for="banana">Colin</label>
+    </div>
+<br>
+  </form>
+  
+	 <textarea rows="4" cols="50" id="log">Hi, guys...</textarea>
 
-	<textarea rows="4" cols="50">Hi, guys...</textarea>
-
-	<div id = "message">
+	 <div id = "message">
 		<button id = "sendM" class="mybtn btn btn-default" onclick="PopAlert()">Send message</a></button>
+	 </div>
 	</div>
-	
 	<br>
 	<footer class="w3-container w3-theme-d5 w3-afBlue">
-    	<p>Team Boba -- Cogs 120 -- Winter2017</p>
+    	<p class = "w3-text-white">Team Boba -- Cogs 120 -- Winter2017</p>
   </footer>
   <script type="text/javascript">
   	function PopAlert(){
@@ -52,6 +73,10 @@
   		$("#sendM").hide();
   		$("#message").append("<button class=\"mybtn btn btn-default\"><a href=\"index.html\">Back to Homepage</a></button>");
   	}
+
+    $( "input" ).on( "click", function() {
+      $( "#log" ).html("Hi, " + $( "input:checked" ).val() + "! Do you ..." );
+    });
   </script>
 </body>
 </html>

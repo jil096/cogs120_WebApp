@@ -82,6 +82,7 @@
 .leftMargin, .lefrMargin a{
     margin-left: 20px;
     margin-bottom:10px;
+    padding-bottom: 10px;
 }
 .w3-section{
     margin-top:16px!important;
