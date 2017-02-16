@@ -16,6 +16,11 @@
     <script type="text/javascript">
     var app = angular.module('myapp',['ui.bootstrap'])
         .controller('CalenderCtrl',function($scope){
+            var active='calendar';
+            $scope.getclass  = function(current){
+                return 'active';
+            }
+
             $scope.arr=[
             {start:'06.00',end:'06.30 AM'},
             {start:'07.00',end:'07.30 AM'},
@@ -93,12 +98,12 @@
             </div>
             <div class="col-md-10">
                 <div class="row">
-                  <div class="col-md-8 text-left" style="font-size:16px; color:gray">
+                  <div class="col-md-8 text-left steps" style="font-size:16px; color:gray; margin-bottom: 10px;">
                       <div style="margin-top: 8px">
-                      <i class="fa fa-calendar" aria-hidden="true"></i> Calender <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                      <i class="fa fa-refresh" aria-hidden="true"></i> Pairing  <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                      <i class="fa fa-gift" aria-hidden="true"></i> Compensation <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                      <i class="fa fa-handshake-o" aria-hidden="true"></i> Confirmation
+                      <span class="active"><i class="fa fa-calendar" aria-hidden="true"></i> Calender <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                      <span><i class="fa fa-refresh" aria-hidden="true"></i> Pairing  <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                      <span><i class="fa fa-gift" aria-hidden="true"></i> Compensation <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                      <span><i class="fa fa-handshake-o" aria-hidden="true"></i> Confirmation</span>
                       </div>
                   </div>                     
                 </div>
@@ -106,8 +111,8 @@
                 <h3>Calender</h3>
                 <div class="row seven-cols">
                     <div class="col-md-1">Sunday</div>
-                    <div class="col-md-1">MonDay</div>
-                    <div class="col-md-1">TuesDay</div>
+                    <div class="col-md-1">Monday</div>
+                    <div class="col-md-1">Tuesday</div>
                     <div class="col-md-1">Wednesday</div>
                     <div class="col-md-1">Thursday</div>
                     <div class="col-md-1">Friday</div>
