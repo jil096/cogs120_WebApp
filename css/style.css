@@ -82,10 +82,8 @@
 .leftMargin, .lefrMargin a{
     margin-left: 20px;
     margin-bottom:10px;
-<<<<<<< HEAD:css/style.css
     padding-bottom: 10px;
-=======
->>>>>>> 7052209045b75bb87d80c9c77a64333e1a7bcd72:css/style.css
+
 }
 .w3-section{
     margin-top:16px!important;
@@ -94,12 +92,16 @@
 .indent-container h3, .indent-container p{
     margin-left: 20px;
     text-indent: 20px;
-<<<<<<< HEAD:css/style.css
-=======
 }
 
 .steps .active{
     color:green;
     font-weight:bolder;
->>>>>>> 7052209045b75bb87d80c9c77a64333e1a7bcd72:css/style.css
+}
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
