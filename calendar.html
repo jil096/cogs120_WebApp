@@ -1,28 +1,86 @@
+
 <!doctype html>
 
-<html>
+<html lang="en">
+  <head>
+  <title>UCSD Commuters</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">   
 
-<head>
-	<title>UCSD Commuters</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/stepBar.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!--script src="js/introHCI.js"></script-->
-</head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stepBar.css">
+    <link rel="stylesheet" type="text/css" href="css/styleph.css" />
 
-<body>
+
+    <script type="text/javascript">
+    var app = angular.module('myapp',['ui.bootstrap'])
+        .controller('CalenderCtrl',function($scope, $http){
+            var active='calendar';
+            $scope.getclass  = function(current){
+                return 'active';
+            }
+
+            $scope.arr=[
+            {start:'06.00',end:'06.30 AM'},
+            {start:'07.00',end:'07.30 AM'},
+            {start:'08.00',end:'08.30 AM'},
+            {start:'09.00',end:'09.30 AM'},
+            {start:'10.00',end:'10.30 AM'},
+            {start:'11.00',end:'11.30 AM'},
+            {start:'12.00',end:'12.30 PM'},
+            {start:'01.00',end:'01.30 PM'},
+            {start:'02.00',end:'02.30 PM'},
+            {start:'03.00',end:'03.30 PM'},
+            {start:'04.00',end:'04.30 PM'},
+            {start:'05.00',end:'05.30 PM'},
+            {start:'06.00',end:'06.30 PM'},
+            {start:'07.00',end:'07.30 PM'},
+            {start:'08.00',end:'08.30 PM'},
+            {start:'09.00',end:'09.30 PM'},
+            {start:'10.00',end:'10.30 PM'},
+            ];
+
+            $scope.days = ['Sunday', 'MonDay','TuesDay','Wednesday','Thursday','Friday','Saturday'];
+            $scope.selarr= [];
+            $scope.select = function(select, day,time){
+              if(select==true){
+                $scope.selarr.push({day:day,time:time});
+              }else{
+                    index = -1;
+                    for(var i = 0, len = $scope.selarr.length; i < len; i++) {
+                        if ($scope.selarr[i].day === day && $scope.selarr[i].time === time) {
+                            index = i;
+                            $scope.selarr.splice(index,1);
+                            break;
+                        }
+                    }
+              }
+            }
+
+            $scope.create_json = function(){
+                $http({
+                    method:'POST',
+                    url   :'json/json.php',
+                    data  :$scope.selarr
+                }).then(function(result){
+                    alert("Files saved at json/file.json");
+                });
+            }
+        });
+    </script>
+  </head>
+
+  <body ng-app="myapp" ng-controller="CalenderCtrl">
 	<div class="topbar">
 		<ul class="w3-navbar w3-afBlue w3-wide w3-padding-8 w3-card-2">
     		<li>
-            <img src="img/comlogo.png"/>
-        </li>
-        <li>
       			<a href="index.html" class="w3-margin-left w3-text-white"><b>UCSD</b> Commuters</a>
     		</li>
-
     		<!-- Float links to the right. Hide them on small screens -->
     		<li class="w3-right w3-hide-small">
       			<a href="help.html" class="w3-left w3-text-white">Help</a>
@@ -34,7 +92,7 @@
 
 
   <!-- Sidenav/menu -->
-  <div class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidenav"><br>
+  <!--div class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidenav"><br>
     <div class="w3-container ">
       <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding" title="close menu">
         <i class="fa fa-remove"></i>
@@ -53,7 +111,7 @@
       <a href="#" class="w3-hover-white w3-hover-text-yellow w3-show-inline-block"><i class="fa fa-snapchat"></i></a>
       <a href="#" class="w3-hover-white w3-hover-text-light-blue w3-show-inline-block"><i class="fa fa-twitter"></i></a>
     </div>
-  </div>
+  </div-->
 
 <!-- Overlay effect when opening sidenav on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
@@ -62,8 +120,6 @@
 <div class="w3-main" style="margin-left:300px">
   <!-- Header -->
   <header class="w3-container" id="portfolio">
-    <!--a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
-    <span class="w3-opennav w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span-->
 
     <div class="container">
         <ul class="progressbar">
@@ -73,31 +129,98 @@
             <li>Confirmation</li>
         </ul>
     </div>
-   
-
-    <!--div class="w3-section w3-bottombar w3-padding-16 w3-white fa w3-margin-right">
-      <i style="font-size:24px">&#xf073;  <font color = "green"><strong>Calendar</strong></font> </i>
-      <i style="font-size:24px" >&#xf101;</i>
-      <i style="font-size:24px">&#xf021; Pairing </i>
-      <i style="font-size:24px" >&#xf101; </i>
-      <i style="font-size:24px">&#xf06b; Compensation </i>
-      <i style="font-size:24px" >&#xf101; </i>
-      <i style="font-size:24px">&#xf2b5; Confirmation </i>
-
-    </div-->
 
   </header>
-  <img src="img/calendar.png" style = "width:70%">
 
-  <button class="mybtn btn btn-default"><a href="pairing.html">BACK</a></button>
-  <button class="mybtn btn btn-default"><a href="pairing.html">NEXT</a></button>
 
-  </div>
+
+</div>
   <br>
-  <footer class="w3-container w3-theme-d5 w3-afBlue">
-    <p class = "w3-text-white">Team Boba -- Cogs 120 -- Winter2017</p>
-  </footer>
-<script>
+  
+
+
+
+	</div>   
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="caluserbox">
+                    <img src="img/user.png"/>
+                    <h1>Denise T</h1>
+                    <p>Sophomore in CogSci</p>
+                </div>
+                <div>
+                    <a href="#location" onclick="w3_close()" class="w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
+                    <a style="display: block" href="#contact" onclick="w3_close()" class="w3-padding"><i class="fa fa-location-arrow fa-fw w3-margin-right"></i>LOCATION</a>                    
+                    <a href="#contact" onclick="w3_close()" class="w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>                    
+                </div>
+                <div class="soclink">
+                    <div class="w3-section w3-padding-top w3-large">
+                        <a href="#" class="w3-hover-white w3-hover-text-indigo w3-show-inline-block"><i class="fa fa-facebook-official"></i></a>
+                        <a href="#" class="w3-hover-white w3-hover-text-purple w3-show-inline-block"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="w3-hover-white w3-hover-text-yellow w3-show-inline-block"><i class="fa fa-snapchat"></i></a>
+                        <a href="#" class="w3-hover-white w3-hover-text-light-blue w3-show-inline-block"><i class="fa fa-twitter"></i></a>
+                    </div>                                        
+                </div>
+            </div>
+            <div class="col-md-10">
+                <!--div class="row">
+                  <div class="col-md-8 text-left steps" style="font-size:16px; color:gray; margin-bottom: 10px;">
+                      <div style="margin-top: 8px">
+                      <span class="active"><i class="fa fa-calendar" aria-hidden="true"></i> Calender <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                      <span><i class="fa fa-refresh" aria-hidden="true"></i> Pairing  <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                      <span><i class="fa fa-gift" aria-hidden="true"></i> Compensation <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                      <span><i class="fa fa-handshake-o" aria-hidden="true"></i> Confirmation</span>
+                      </div>
+                  </div>                     
+                </div-->
+
+                <h3>Calender</h3>
+                <div class="row seven-cols">
+                    <div class="col-md-1">Sunday</div>
+                    <div class="col-md-1">Monday</div>
+                    <div class="col-md-1">Tuesday</div>
+                    <div class="col-md-1">Wednesday</div>
+                    <div class="col-md-1">Thursday</div>
+                    <div class="col-md-1">Friday</div>
+                    <div class="col-md-1">Saturday</div>
+                </div>
+                <div class="row seven-cols caltime">
+                    <div class="col-md-1" ng-repeat="day in days">
+                        <div class="col-md-12" ng-repeat="time in arr">
+                            <button 
+                            type="button" 
+                            class="btn btn-default" 
+                            ng-model="sel1" 
+                            ng-click="select(sel1,day,time.start)" 
+                            uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{time.start}}</button>
+                            <button 
+                            type="button" 
+                            class="btn btn-default" 
+                            ng-model="sel2" 
+                            ng-click="select(sel2,day,time.end)" 
+                            uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{time.end}}</button>                            
+                        </div>
+                    </div>                                                                               
+                </div>
+                <div class="row">
+                    selection : {{selarr}}
+                </div>
+                <div class="row">
+                  <div class="col-md-3 col-md-offset-9 text-right" style="margin-top: 10px">
+                      <a href="index.html" class="btn btn-primary">PREVIOUS</a>
+                      <a href="#" class="btn btn-primary" ng-click="create_json()">NEXT</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <footer class="w3-container w3-theme-d5 w3-afBlue">
+          <p class = "w3-text-white">Team Boba -- Cogs 120 -- Winter2017</p>
+        </footer>
+    </div>
+  </body>
+  
+  <script>
 // Script to open and close sidenav
 function w3_open() {
     document.getElementById("mySidenav").style.display = "block";
@@ -110,6 +233,4 @@ function w3_close() {
 }
 </script>
 
-
-</body>
 </html>

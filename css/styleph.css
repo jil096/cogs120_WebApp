@@ -31,12 +31,7 @@
     color: #bbbbbb;
 }
 
-.userbox img{
-
-}
-
 .buttonbox{
-
     margin-top: 40px;
     width: 100%;
     height:250px;    
@@ -44,62 +39,57 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);    
     text-align: center;
 }
-
-
 .buttonbox .mybtn{
     display:block;
     margin:30px auto;
-    width: 60%;
+    width: 80%;
     background-color: #CCC;
     color:darkslategray;
-    border-radius: 10px;
+    border-radius: 0px;
     font-size: 16px;
     font-family: 'Lato', sans-serif;    
 }
-
-.buttonboxD{
-    
-    height:190px;    
-  
+.navbar{
+    border-radius: 0px;
 }
-.w3-afBlue,.w3-hover-white:hover
-{
-    color:#000!important;
-    background-color:#466283!important
+.soclink a{
+    margin: 0px 10px;
 }
-
-.topbar a{
-    font-size: 100%;
+.caltime .col-md-12{
+    padding:0;
+    margin-bottom:3px;
+}
+.caltime .col-md-12 .btn{
+    padding:2px;
 }
 
-.select {
+@media (min-width: 768px){
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1  {
     width: 100%;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #f1f1f1;
-}
-.leftMargin, .lefrMargin a{
-    margin-left: 20px;
-    margin-bottom:10px;
-<<<<<<< HEAD:css/style.css
-    padding-bottom: 10px;
-=======
->>>>>>> 7052209045b75bb87d80c9c77a64333e1a7bcd72:css/style.css
-}
-.w3-section{
-    margin-top:16px!important;
-    margin-bottom:16px!important;
-}
-.indent-container h3, .indent-container p{
-    margin-left: 20px;
-    text-indent: 20px;
-<<<<<<< HEAD:css/style.css
-=======
+    *width: 100%;
+  }
 }
 
-.steps .active{
-    color:green;
-    font-weight:bolder;
->>>>>>> 7052209045b75bb87d80c9c77a64333e1a7bcd72:css/style.css
+@media (min-width: 992px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+}
+
+/**
+ *  The following is not really needed in this case
+ *  Only to demonstrate the usage of @media for large screens
+ */    
+@media (min-width: 1200px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
 }
