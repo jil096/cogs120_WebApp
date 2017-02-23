@@ -20,54 +20,43 @@
     <script type="text/javascript">
     var app = angular.module('myapp',['ui.bootstrap'])
         .controller('CalenderCtrl',function($scope, $http){
-            var active='calendar';
-            $scope.getclass  = function(current){
-                return 'active';
+            $scope.create_json = function(){
+                $http.get('json/file.json').then(function(result){
+                    $scope.dayselect = result.data;
+                });
             }
+            $scope.create_json();
+            
+            function checkbutton(){
+                if($scope.selarr.length>0){
+                    $scope.buttonnext = 0;
+                }else{
+                    $scope.buttonnext = 1;
+                }
+            }
+            $scope.buttonnext = 1;
 
-            $scope.arr=[
-            {start:'08.00',end:'08.30 AM'},
-            {start:'09.00',end:'09.30 AM'},
-            {start:'10.00',end:'10.30 AM'},
-            {start:'11.00',end:'11.30 AM'},
-            {start:'12.00',end:'12.30 PM'},
-            {start:'01.00',end:'01.30 PM'},
-            {start:'02.00',end:'02.30 PM'},
-            {start:'03.00',end:'03.30 PM'},
-            {start:'04.00',end:'04.30 PM'},
-            {start:'05.00',end:'05.30 PM'},
-            {start:'06.00',end:'06.30 PM'},
-            {start:'07.00',end:'07.30 PM'},
-            {start:'08.00',end:'08.30 PM'},
-            {start:'09.00',end:'09.30 PM'},
-            {start:'10.00',end:'10.30 PM'},
-            ];
-
-            $scope.days = ['Sunday', 'MonDay','TuesDay','Wednesday','Thursday','Friday','Saturday'];
-            $scope.selarr= [];
-            $scope.select = function(select, day,time){
+            $scope.selarr=[];
+            $scope.select = function(select, dt){
               if(select==true){
-                $scope.selarr.push({day:day,time:time});
+                $scope.selarr.push(dt);
               }else{
                     index = -1;
                     for(var i = 0, len = $scope.selarr.length; i < len; i++) {
-                        if ($scope.selarr[i].day === day && $scope.selarr[i].time === time) {
+                        if ($scope.selarr[i].day === dt.day && $scope.selarr[i].time === dt.time) {
                             index = i;
                             $scope.selarr.splice(index,1);
                             break;
                         }
                     }
               }
-            }
-
-            $scope.create_json = function(){
-                $http({
-                    method:'POST',
-                    url   :'json/json.php',
-                    data  :$scope.selarr
-                }).then(function(result){
-                    alert("Files saved at json/file.json");
-                });
+              checkbutton();
+            }            
+            $scope.next_view = function(){
+                var oldpath = window.location.pathname;
+                var newpath = oldpath.replace("calendar1.html","driver_fail_sch.html");
+                window.location.pathname = newpath;
+                //window.location.href = newpath;
             }
         });
     </script>
@@ -162,41 +151,25 @@
                   </div>                     
                 </div-->
               <div style = "Margin:30px">
-                <h3>Calender</h3>
-                <div class="row seven-cols">
-                    <div class="col-md-1">Sunday</div>
-                    <div class="col-md-1">Monday</div>
-                    <div class="col-md-1">Tuesday</div>
-                    <div class="col-md-1">Wednesday</div>
-                    <div class="col-md-1">Thursday</div>
-                    <div class="col-md-1">Friday</div>
-                    <div class="col-md-1">Saturday</div>
-                </div>
+                <h3>Selection</h3>
                 <div class="row seven-cols caltime">
-                    <div class="col-md-1" ng-repeat="day in days">
-                        <div class="col-md-12" ng-repeat="time in arr">
+                    <div class="col-md-2 col-xs-12" style="margin-bottom:10px;" ng-repeat="dt in dayselect">
                             <button 
+                            style="width:174px; text-align: left;"
                             type="button" 
                             class="btn btn-default" 
                             ng-model="sel1" 
-                            ng-click="select(sel1,day,time.start)" 
-                            uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{time.start}}</button>
-                            <button 
-                            type="button" 
-                            class="btn btn-default" 
-                            ng-model="sel2" 
-                            ng-click="select(sel2,day,time.end)" 
-                            uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{time.end}}</button>                            
-                        </div>
+                            ng-click="select(sel1, dt)" 
+                            uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{dt.day}} - {{dt.time}}</button>
                     </div>                                                                               
                 </div>
                 <div class="row">
-                    selection : {{selarr}}
+                   Selection :  {{selarr}}
                 </div>
                 <div class="row">
                   <div class="col-md-3 col-md-offset-9 text-right" style="margin-top: 10px">
                       <a href="index.html" class="btn btn-primary">PREVIOUS</a>
-                      <a href="driver_fail_sch.html" class="btn btn-primary" ng-click="create_json()">NEXT</a>
+                      <button class="btn btn-primary" ng-disabled="buttonnext==1" ng-click="next_view()">NEXT</a>
                   </div>
                 </div>
             </div>
