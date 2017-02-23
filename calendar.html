@@ -165,7 +165,7 @@
                 </div-->
               <div style = "Margin:30px">
                 <h3>Calender</h3>
-                <div class="row seven-cols">
+                <div class="row seven-cols visible-md">
                     <div class="col-md-1">Sunday</div>
                     <div class="col-md-1">Monday</div>
                     <div class="col-md-1">Tuesday</div>
@@ -175,7 +175,8 @@
                     <div class="col-md-1">Saturday</div>
                 </div>
                 <div class="row seven-cols caltime">
-                    <div class="col-md-1" ng-repeat="day in days">
+                    <div class="col-md-1 col-xs-6" ng-repeat="day in days">
+                        <div class="hidden-md visible-xs" style="font-weight:bold">{{day}}</div>
                         <div class="col-md-12" ng-repeat="time in arr">
                             <button 
                             type="button" 
