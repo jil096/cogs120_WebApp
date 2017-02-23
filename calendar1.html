@@ -53,7 +53,10 @@
               checkbutton();
             }            
             $scope.next_view = function(){
-                window.location.pathname = "/cogs120_WebApp/driver_fail_sch.html";
+                var oldpath = window.location.pathname;
+                var newpath = oldpath.replace("calendar1.html","driver_fail_sch.html");
+                window.location.pathname = newpath;
+                //window.location.href = newpath;
             }
         });
     </script>
