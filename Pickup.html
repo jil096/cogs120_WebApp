@@ -29,10 +29,41 @@
 	</div>
 
 	<div style = "Margin: 30px">
-		<h3>XXX is on his/her way to pick you up</h3>
-		<p> please wait XX mins at XXX location</p>
+		<div class="col-md-4">
+           <div class="userbox">
+              <div class="row">
+                <div class="col-md-3" style="text-align: left">
+                  <img src="img/user2.png"/>
+                </div>
+              <div class="col-md-3">
+                <h1 class = " w3-text-black">Andrew N</h1>
+                <h1 class = " w3-text-black">Driver</h1>
+           </div>
+         </div>
+     </div>  
+     <br>
+     <br>
+     <br>
+
+ <button class="btn btn-primary"><a href="Flist.html" target="_blank">+ Friend</a></button>
+	</div>
+
+		<h3>Andrew is on his way to pick you up. Please wait at the bus stop you selected.</h3>
+
+
+		<textarea rows="4" cols="50" id="log">Hi, Andrew...</textarea>
+
+	 <div id = "message">
+		<button id = "sendM" class="mybtn btn btn-default" onclick="PopAlert()">Send message</a></button>
+	 </div>
+<br>
+
+	
+	<br>
+
 		<div>
-			<button class="mybtn btn btn-default"><a href="index.html">Back to home page</a></button>
+			<button class="mybtn btn btn-default"><a href="index.html">Home</a></button>
+
 		
 		</div>
 	</div>
@@ -40,5 +71,13 @@
 	<footer class="w3-container w3-theme-d5 w3-afBlue">
     	<p class = "w3-text-white">Team Boba -- Cogs 120 -- Winter2017</p>
   </footer>
+
+   <script type="text/javascript">
+  	function PopAlert(){
+  		alert("Messages have been sent! ");
+  		$("#sendM").hide();
+  	}
+
+
 </body>
 </html>

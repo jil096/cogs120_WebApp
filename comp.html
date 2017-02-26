@@ -44,9 +44,13 @@
 	
 	<div style = "Margin:30px">
 
-	<h3>Would you offer something to the driver?</h3>
+	<h3>What would you offer in exchange?</h3>
 
 	<form>
+    <div>
+      <input type="checkbox" name="compensation" value="none">
+      <label for="orange">Nothing</i></label>
+    </div>
     <div>
       <input type="checkbox" name="compensation" value="cash">
       <label for="orange">Cash<i class="fa fa-money"></i></label>
@@ -59,9 +63,14 @@
       <input type="checkbox" name="compensation" value="movie">
       <label for="banana">Coffee<i class="fa fa-coffee"></i></label>
     </div>
-  </form>
-  
-	 <textarea rows="4" cols="50" id="log">I want to offer the driver ...</textarea>
+
+
+  <div>
+      <input type="checkbox" name="other" value="other">
+
+	 <textarea rows="4" cols="50" id="log">I can offer...</textarea>
+  </div>
+</form>
 
 	<div>
 		<button class="mybtn btn btn-default"><a href="calendar.html">BACK</a></button>

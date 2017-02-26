@@ -22,7 +22,7 @@
         </li>
         <!-- Float links to the right. Hide them on small screens -->
         <li class="w3-right ">
-          <a href="login.html" class="w3-left w3-margin-right w3-text-white">Sign Out</a>
+          <a href="login.html" class="w3-left w3-margin-right w3-text-white">Sign In</a>
         </li>
   		</ul>
 	</div>
