@@ -10,8 +10,34 @@
   <link rel="stylesheet" href="css/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--script src="js/introHCI.js"></script-->
+  <link rel="stylesheet" href="css/modal/modal.css">
+  <style>.modal a.close-modal { top: 0;  right: 0; }</style>
+  <script  src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>  
+  <script src="js/jquery.modal.js" type="text/javascript" charset="utf-8"></script>    
 </head>
 <body>
+  <div id="ex1" style="display:none;">
+    <div style = "margin: 30px">
+      <h3>Hello Commuters!</h3>
+      <p>This app is designed exclusively for the UCSD community, making life easier for commuters with and without cars through collaboration. The rides go from Superloop bus stops to on campus locations.</p>
+    
+      <head>If you are a Passenger, you can...</head>
+        <ul>
+          <li>Set up quarter long schedules with student drivers.</li>
+          <li>Request a lift anytime to campus.</li>
+          <li>Add drivers you've met to your friend list and see them more.</li>
+        </ul>
+        <p>We encourage you to offer goodies or other forms of compensation to the drivers as courtesy! It increases your chances of getting paired with a driver!</p>
+      <br>
+
+      <head>If you are a Driver, you can...</head>
+        <ul>
+          <li>Get to know amazing people while commuting.</li>
+          <li>Specify your preferred form of compensation.</li>
+          <li>Become a Passenger anytime.</li>
+        </ul>
+    </div>
+  </div>  
 	<div class="topbar">
 		<ul class="w3-navbar w3-afBlue w3-wide w3-padding-8 w3-card-2">
 
@@ -23,7 +49,7 @@
         </li>
         <!-- Float links to the right. Hide them on small screens -->
         <li class="w3-right ">
-          <a href="help.html" class="w3-left w3-text-white">Help</a>
+          <a href="#ex1" rel="modal:open" class="w3-left w3-text-white">Help</a>
           <a href="login.html" class="w3-left w3-margin-right w3-text-white">Sign Out</a>
         </li>
   		</ul>
