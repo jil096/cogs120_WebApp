@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<!--script src="js/introHCI.js"></script-->
   <link rel="stylesheet" href="css/modal/modal.css">
   <style>.modal a.close-modal { top: 0;  right: 0; }</style>
@@ -54,7 +55,7 @@
   		</ul>
 	</div>
 
-	<div style = "Margin: 30px">
+	<div style = "Margin: 30px, width:100%">
     <h3>Andrew is on his way to pick you up. Please wait at the bus stop you selected.</h3>
 		<div class="col-md-4">
            <div class="userbox">
@@ -62,48 +63,43 @@
                 <div class="col-md-3" style="text-align: left">
                   <img src="img/user2.png"/>
                 </div>
-              <div class="col-md-3">
-                <h1 class = " w3-text-black">Andrew N</h1>
-                <h1 class = " w3-text-black">Driver</h1>
-           </div>
-         </div>
-     </div>  
-     <br>
-     <br>
-     <br>
-
- <button class="btn btn-primary"><a href="Flist.html" target="_blank">+ Friend</a></button>
-	</div>
-
-		
-
+                <div class="col-md-4 col-xs-4 col-xs-offset-2 col-md-offset-1" style = "right:0px" >
+                  <h1 class = " w3-text-black">Andrew N</h1>
+                  <h1 class = " w3-text-black">Driver</h1>
+                </div>
+              </div>
+          </div>  
+          <br>
+          <br>
+    <div class="row">
+      <div class="col-md-3  text-left" style="margin-top: 10px">
+        <a href="Flist.html" class="btn btn-primary">+Friend</a>
+      </div>
+    </div>
 
 		<textarea rows="4" cols="50" id="log">Hi, Andrew...</textarea>
+    <div id = "message">
+		  <button id = "sendM" class="mybtn btn btn-primary" onclick="PopAlert()">Send message</a></button>
+    </div>
+    <br>
 
-	 <div id = "message">
-		<button id = "sendM" class="mybtn btn btn-default" onclick="PopAlert()">Send message</a></button>
-	 </div>
-<br>
-
-	
-	<br>
-
-		<div>
-			<button class="mybtn btn btn-default"><a href="index.html">Home</a></button>
-
-		
-		</div>
+		<div class="row">
+      <div class="col-md-3  text-left" style="margin-top: 10px">
+        <a href="index.html" class="btn btn-primary">HOME</a>
+      </div>
+    </div>
 	</div>
 
 	<footer class="w3-container w3-theme-d5 w3-afBlue">
     	<p class = "w3-text-white">Team Boba -- Cogs 120 -- Winter2017</p>
   </footer>
 
-   <script type="text/javascript">
+  <script type="text/javascript">
   	function PopAlert(){
   		alert("Messages have been sent! ");
   		$("#sendM").hide();
   	}
+  </script>
 
 
 </body>

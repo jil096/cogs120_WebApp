@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="js/submit.js"></script>
 
@@ -86,7 +87,7 @@
 	 <textarea rows="4" cols="50" id="log">Hi, guys...</textarea>
 
 	 <div id = "message">
-		<button id = "sendM" class="mybtn btn btn-default" onclick="PopAlert()">Send message</a></button>
+		<button id = "sendM" class="mybtn btn btn-primary" onclick="PopAlert()">Send message</a></button>
 	 </div>
 	</div>
 	<br>
@@ -97,7 +98,7 @@
   	function PopAlert(){
   		alert("Messages have been sent! ");
   		$("#sendM").hide();
-  		$("#message").append("<button class=\"mybtn btn btn-default\"><a href=\"index.html\">Back to Homepage</a></button>");
+  		$("#message").append("<a href=\"index.html\" class=\"btn btn-primary\">HOME</a>");
   	}
 
     $( "input" ).on( "click", function() {
