@@ -229,10 +229,12 @@
                     </div>                                                                               
                 </div>
                 <div class="row" ng-show="selarr.length>0">
+                    <div class="col-md-12">
                     <h3>Selected Day/Time</h3>
                     <button class="btn btn-default" ng-repeat="sel in selarr" style="margin: 5px;">
                         <i class="fa fa-calendar-o" aria-hidden="true"></i><br/>
                         {{sel.day}}<br/>{{sel.time}}</button>
+                    </div>
                 </div>
                 <div class="row">
                   <div class="col-md-3 col-md-offset-9 text-right" style="margin-top: 10px">
