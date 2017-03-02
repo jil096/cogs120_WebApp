@@ -49,22 +49,48 @@
             {start:'09.00 PM',end:'09.30 PM'},
             {start:'10.00 PM',end:'10.30 PM'},
             ];
+            $scope.arr_time=[
+            {start:'08.00 AM'},{start:'08.30 AM'},
+            {start:'09.00 AM'},{start:'09.30 AM'},
+            {start:'10.00 AM'},{start:'10.30 AM'},
+            {start:'11.00 AM'},{start:'11.30 AM'},
+            {start:'12.00 PM'},{start:'12.30 PM'},
+            {start:'01.00 PM'},{start:'01.30 PM'},
+            {start:'02.00 PM'},{start:'02.30 PM'},
+            {start:'03.00 PM'},{start:'03.30 PM'},
+            {start:'04.00 PM'},{start:'04.30 PM'},
+            {start:'05.00 PM'},{start:'05.30 PM'},
+            {start:'06.00 PM'},{start:'06.30 PM'},
+            {start:'07.00 PM'},{start:'07.30 PM'},
+            {start:'08.00 PM'},{start:'08.30 PM'},
+            {start:'09.00 PM'},{start:'09.30 PM'},
+            {start:'10.00 PM'},{start:'10.30 PM'},
+            ];            
 
-            $scope.days = ['Sunday', 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+            $scope.days = [{id:1,day:'Sunday'}, 
+                           {id:2,day:'Monday'},
+                           {id:3,day:'Tuesday'},
+                           {id:4,day:'Wednesday'},
+                           {id:5,day:'Thursday'},
+                           {id:6,day:'Friday'},
+                           {id:7, day:'Saturday'}];
+            $scope.optsel = {};
+            $scope.optsel.day_select =$scope.days[0];
+            $scope.optsel.select_time ='08.00 AM';
+
             $scope.selarr= [];
-            $scope.select = function(select, day,time){
-              if(select==true){
-                $scope.selarr.push({day:day,time:time});
-              }else{
-                    index = -1;
+            $scope.select = function(optsel){
+                $scope.selarr.push({day:optsel.day_select.day,time:optsel.select_time});
+            }
+            $scope.remove = function(sel){
+                    var index = -1;
                     for(var i = 0, len = $scope.selarr.length; i < len; i++) {
-                        if ($scope.selarr[i].day === day && $scope.selarr[i].time === time) {
+                        if ($scope.selarr[i].day === sel.day && $scope.selarr[i].time === sel.time) {
                             index = i;
                             $scope.selarr.splice(index,1);
                             break;
                         }
-                    }
-              }
+                    }          
             }
 
             $scope.create_json = function(){
@@ -74,9 +100,6 @@
                     data  :$scope.selarr
                 }).then(function(result){
                     alert("Files saved at json/file.json");
-                    var oldpath = window.location.pathname;
-                    var newpath = oldpath.replace("calendar.html","comp.html");
-                    window.location.pathname = newpath;                    
                 });
             }
         });
@@ -210,34 +233,40 @@
                     <div class="col-md-1">Saturday</div>
                 </div>
                 <div class="row seven-cols caltime">
-                    <div class="col-md-1 col-xs-6" ng-repeat="day in days">
-                        <div class="hidden-md visible-xs" style="font-weight:bold">{{day}}</div>
-                        <div class="col-md-12" ng-repeat="time in arr">
-                            <button 
-                            type="button" 
-                            class="btn btn-default" 
-                            ng-model="sel1" 
-                            ng-click="select(sel1,day,time.start)" 
-                            uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{time.start}}</button>
-                            <button 
-                            type="button" 
-                            class="btn btn-default" 
-                            ng-model="sel2" 
-                            ng-click="select(sel2,day,time.end)" 
-                            uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{time.end}}</button>                            
-                        </div>
-                    </div>                                                                               
+                    <div class="col-md-1 col-xs-3">
+                        <select class="form-control"
+                            ng-model="optsel.day_select"
+                            ng-options="item as item.day for item in days">>
+                        </select>      
+                    </div>  
+                    <div class="col-md-1 col-xs-3">
+                        <select class="form-control"
+                            ng-model="optsel.select_time"
+                            ng-options="item.start as item.start for item  in arr_time">>
+                        </select>                                                           
+                    </div>                    
+                    <div class="col-md-1 col-xs-3"> 
+                        <a class="btn btn-primary" ng-click="select(optsel)">SELECT</a> 
+                    </div>                                                                                                           
                 </div>
                 <div class="row" ng-show="selarr.length>0">
                     <h3>Selected Day/Time</h3>
-                    <button class="btn btn-default" ng-repeat="sel in selarr" style="margin: 5px;">
+                    <div class="col-md-1 col-xs-1"  style="margin: 5px;"  ng-repeat="sel in selarr">
+                    <button class="btn btn-default">
                         <i class="fa fa-calendar-o" aria-hidden="true"></i><br/>
-                        {{sel.day}}<br/>{{sel.time}}</button>
+                        {{sel.day}}<br/>
+                        {{sel.time}}<br/>
+                    </button>
+                    <div style="text-align: center">
+                    <button class="btn btn-sm btn-danger" ng-click="remove(sel)">REMOVE</button>                    
+                    </div>
+                    </div>
+
                 </div>
                 <div class="row">
                   <div class="col-md-3 col-md-offset-9 text-right" style="margin-top: 10px">
                       <a href="index.html" class="btn btn-primary">BACK</a>
-                      <a class="btn btn-primary" ng-click="create_json()" ng-show="selarr.length>0">NEXT</a>
+                      <a href="comp.html" ng-show="selarr.length>0" class="btn btn-primary" ng-click="create_json()">NEXT</a>
                   </div>
                 </div>
             </div>
