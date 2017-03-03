@@ -56,10 +56,23 @@
               checkbutton();
             }            
             $scope.next_view = function(){
-                var oldpath = window.location.pathname;
-                var newpath = oldpath.replace("calendar1.html","driver_fail_sch.html");
-                window.location.pathname = newpath;
-                //window.location.href = newpath;
+                var writearr = [];
+                for(var i = 0, len1 = $scope.dayselect.length; i < len1; i++) {
+                    var k =$scope.selarr.indexOf($scope.dayselect[i]);
+                    if(k === -1){
+                        writearr.push($scope.dayselect[i]);
+                    }
+                }
+                $http({
+                    method:'POST',
+                    url   :'json/json.php',
+                    data  :writearr
+                }).then(function(result){
+                    var oldpath = window.location.pathname;
+                    var newpath = oldpath.replace("calendar1.html","driver_fail_sch.html");
+                    window.location.pathname = newpath;
+                    window.location.href = newpath;                   
+                });                
             }
         });
     </script>
