@@ -218,13 +218,13 @@
                         <div class="col-md-12" ng-repeat="time in arr">
                             <button 
                             type="button" 
-                            class="btn btn-default" 
+                            class="btn btn-default selectBtn" 
                             ng-model="sel1" 
                             ng-click="select(sel1,day,time.start)" 
                             uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{time.start}}</button>
                             <button 
                             type="button" 
-                            class="btn btn-default" 
+                            class="btn btn-default selectBtn" 
                             ng-model="sel2" 
                             ng-click="select(sel2,day,time.end)" 
                             uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{time.end}}</button>                            
@@ -265,6 +265,15 @@
 
   </script>
 
+  <script type="text/javascript">
+    function initializePage() {
+      // your code here
+      $(".selectBtn").click(function(e){
+        ga("send", "event", "select", "click");
+      });
+    }
+
+  </script>
 
   </body>
 

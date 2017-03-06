@@ -102,7 +102,7 @@ text-align:center !important;
           <div class="buttonbox">
             <a href="nowLoc.html"><button type="button" class="mybtn btn btn-default">Request a lift now</button></a>
 
-            <a href="calendar.html"><button type="button" class="mybtn btn btn-default">Quarter-long Schedule</button></a>
+            <a id="testing" href="calendar.html"><button type="button" class="mybtn btn btn-default">Quarter-long Schedule</button></a>
             
             <a href="Flist.html"><button type="button" class="mybtn btn btn-default">My Driver Friends</button></a>
           </div>    
@@ -125,6 +125,16 @@ text-align:center !important;
   ga('send', 'pageview');
 
   </script>
+
+
+  <script type="text/javascript">
+      var num = Math.floor(Math.random() * 2);    
+      if(num <1){
+         $("#testing").attr("href","calendar_simple.html");
+      }
+     
+  </script>
+
 
   </body>
 </html>

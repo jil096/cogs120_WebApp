@@ -250,7 +250,7 @@
                         </select>                                                           
                     </div>                    
                     <div class="col-md-1 col-xs-3"> 
-                        <a class="btn btn-primary" ng-click="select(optsel)">SELECT</a> 
+                        <a class="btn btn-primary selectBtn" ng-click="select(optsel)">SELECT</a> 
                     </div>                                                                                                           
                 </div>
                 <div class="row" ng-show="selarr.length>0">
@@ -293,9 +293,15 @@
   ga('send', 'pageview');
 
   </script>
+  <script type="text/javascript">
+    function initializePage() {
+      // your code here
+      $(".selectBtn").click(function(e){
+        ga("send", "event", "select", "click");
+      });
+    }
 
-
-
+  </script>
   </body>
 
 </html>
