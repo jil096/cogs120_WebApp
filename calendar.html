@@ -83,6 +83,22 @@
     </script>
   </head>
 
+  <!-- Google Analytics Content Experiment code -->
+<script>function utmx_section(){}function utmx(){}(function(){var
+k='142023111-0',d=document,l=d.location,c=d.cookie;
+if(l.search.indexOf('utm_expid='+k)>0)return;
+function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script><script>utmx('url','A/B');</script>
+<!-- End of Google Analytics Content Experiment code -->
+
+
   <body ng-app="myapp" ng-controller="CalenderCtrl">
   <div id="ex1" style="display:none;">
     <div style = "margin: 30px">
@@ -123,30 +139,6 @@
   		</ul>
 	</div>
 
-
-
-  <!-- Sidenav/menu -->
-  <!--div class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidenav"><br>
-    <div class="w3-container ">
-      <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding" title="close menu">
-        <i class="fa fa-remove"></i>
-      </a>
-      <img src="img/user.png" class="w3-round"><br><br>
-      <h4 class="w3-padding-0"><b>Denise T.</b></h4>
-      <p class="w3-text-grey">Sophomore in CogSci</p>
-    </div>
-    <a href="#location" onclick="w3_close()" class="w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-padding"><i class="fa fa-location-arrow fa-fw w3-margin-right"></i>LOCATION</a>
-    <a href="#contact" onclick="w3_close()" class="w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
-   
-    <div class="w3-section w3-padding-top w3-large">
-      <a href="#" class="w3-hover-white w3-hover-text-indigo w3-show-inline-block"><i class="fa fa-facebook-official"></i></a>
-      <a href="#" class="w3-hover-white w3-hover-text-purple w3-show-inline-block"><i class="fa fa-instagram"></i></a>
-      <a href="#" class="w3-hover-white w3-hover-text-yellow w3-show-inline-block"><i class="fa fa-snapchat"></i></a>
-      <a href="#" class="w3-hover-white w3-hover-text-light-blue w3-show-inline-block"><i class="fa fa-twitter"></i></a>
-    </div>
-  </div-->
-
 <!-- Overlay effect when opening sidenav on small screens >
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div-->
 
@@ -165,39 +157,6 @@
   </header>
 </div>
   
-    <!--div class="container">
-        <div class="row">
-            <div class="col-md-2">
-                <div class="caluserbox">
-                    <img src="img/user.png"/>
-                    <h1>Denise T</h1>
-                    <p>Sophomore in CogSci</p>
-                </div>
-                <div>
-                    <a href="#location" onclick="w3_close()" class="w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
-                    <a style="display: block" href="#contact" onclick="w3_close()" class="w3-padding"><i class="fa fa-location-arrow fa-fw w3-margin-right"></i>LOCATION</a>                    
-                    <a href="#contact" onclick="w3_close()" class="w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>                    
-                </div>
-                <div class="soclink">
-                    <div class="w3-section w3-padding-top w3-large">
-                        <a href="#" class="w3-hover-white w3-hover-text-indigo w3-show-inline-block"><i class="fa fa-facebook-official"></i></a>
-                        <a href="#" class="w3-hover-white w3-hover-text-purple w3-show-inline-block"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="w3-hover-white w3-hover-text-yellow w3-show-inline-block"><i class="fa fa-snapchat"></i></a>
-                        <a href="#" class="w3-hover-white w3-hover-text-light-blue w3-show-inline-block"><i class="fa fa-twitter"></i></a>
-                    </div>                                        
-                </div>
-            </div>
-            <div class="col-md-10">
-                <div class="row">
-                  <div class="col-md-8 text-left steps" style="font-size:16px; color:gray; margin-bottom: 10px;">
-                      <div style="margin-top: 8px">
-                      <span class="active"><i class="fa fa-calendar" aria-hidden="true"></i> Calender <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
-                      <span><i class="fa fa-refresh" aria-hidden="true"></i> Pairing  <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
-                      <span><i class="fa fa-gift" aria-hidden="true"></i> Compensation <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
-                      <span><i class="fa fa-handshake-o" aria-hidden="true"></i> Confirmation</span>
-                      </div>
-                  </div>                     
-                </div-->
               <div style = "Margin:30px">
                <div class="alert alert-success" role="alert">
                 <strong>You are selecting arrival time to destination. </strong>
@@ -264,15 +223,11 @@
   ga('send', 'pageview');
 
   </script>
-
   <script type="text/javascript">
-
       // your code here
       $(".selectBtn").click(function(e){
         ga("send", "event", "select", "click");
       });
-
-
   </script>
 
   </body>
