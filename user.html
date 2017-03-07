@@ -24,7 +24,7 @@
         .controller('UserCtrl',function($scope, $http){
             $scope.showuser = false;
             $scope.login = function(){
-                $http.get('json/user.json').then(function(result){
+                $http.get('user/user.json').then(function(result){
                     angular.forEach(result.data,function(val){
                         if(val.user==$scope.username){
                             $scope.user = val;
