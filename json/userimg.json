@@ -2,6 +2,7 @@
     {
         "id": "user1",
         "job": "Driver",
+        "job1": "Passenger",
         "user": "Faress",
         "name" : "Faress",
         "image" : "img/faress1.jpg"
@@ -9,6 +10,7 @@
     {
         "id": "user2",
         "job": "Driver",
+        "job1": "Passenger",
         "user": "Jianling",
         "name" : "Jianling",
         "image" : "img/jai1.jpg"
@@ -16,6 +18,7 @@
     {
         "id": "user3",
         "job": "Driver",
+        "job1": "Passenger",
         "user": "Denise",
         "name" : "Denise",
         "image" : "img/user.png"
