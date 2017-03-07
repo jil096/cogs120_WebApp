@@ -13,9 +13,20 @@
   <script  src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>  
   <script src="js/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>  
+    <script type="text/javascript">
+    var app = angular.module('myapp',['ui.bootstrap'])
+        .controller('UserCtrl',function($scope, $http){
+            $http.get('json/user.json').then(function(result){
+                $scope.user = result.data;
+            });
+            
+        });
+    </script>  
   </head>
 
-  <body class = "home">
+  <body class = "home"  ng-app="myapp" ng-controller="UserCtrl">
   <div id="ex1" style="display:none;">
     <div style = "margin: 30px">
       <h3>Hello Commuters!</h3>
@@ -64,11 +75,11 @@
           <div class="userbox">
             <div class="row">
               <div class="col-md-3 col-xs-3" style="text-align: left">
-                <img src="img/user.png"/>
+                <img src="{{user.image}}" style="height: 148px;"/>
               </div>
               <div class="col-md-4 col-md-offset-2 col-xs-4 col-xs-offset-2">
-                <h1 class = " w3-text-black">Denise T</h1>
-                <h1 class = " w3-text-black">Driver</h1>
+                <h1 class = " w3-text-black">{{user.name}}</h1>
+                <h1 class = " w3-text-black">{{user.job}}</h1>
               </div>
                
             </div>
