@@ -21,7 +21,16 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/stepBar.css">
     <link rel="stylesheet" type="text/css" href="css/styleph.css" />
-
+    <style>
+    .dtsel{        margin:5px;    }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2), 
+    only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2){ 
+        .dtsel{        margin:0px;  margin-bottom: 10px;  }
+        .caltime .col-xs-12{
+            margin-bottom: 10px;
+        }
+    }        
+    </style>
 
     <script type="text/javascript">
     var app = angular.module('myapp',['ui.bootstrap'])
@@ -227,35 +236,26 @@
                 </div>
 
                 <h3>Calender</h3>
-                <div class="row seven-cols visible-md">
-                    <div class="col-md-1">Sunday</div>
-                    <div class="col-md-1">Monday</div>
-                    <div class="col-md-1">Tuesday</div>
-                    <div class="col-md-1">Wednesday</div>
-                    <div class="col-md-1">Thursday</div>
-                    <div class="col-md-1">Friday</div>
-                    <div class="col-md-1">Saturday</div>
-                </div>
                 <div class="row seven-cols caltime">
-                    <div class="col-md-1 col-xs-3">
+                    <div class="col-md-1 col-xs-12">
                         <select class="form-control"
                             ng-model="optsel.day_select"
                             ng-options="item as item.day for item in days">>
                         </select>      
                     </div>  
-                    <div class="col-md-1 col-xs-3">
+                    <div class="col-md-1 col-xs-12">
                         <select class="form-control"
                             ng-model="optsel.select_time"
                             ng-options="item.start as item.start for item  in arr_time">>
                         </select>                                                           
                     </div>                    
-                    <div class="col-md-1 col-xs-3"> 
+                    <div class="col-md-1 col-xs-12"> 
                         <a class="btn btn-primary selectBtn" ng-click="select(optsel)">SELECT</a> 
                     </div>                                                                                                           
                 </div>
                 <div class="row" ng-show="selarr.length>0">
                     <h3>Selected Day/Time</h3>
-                    <div class="col-md-1 col-xs-1"  style="margin: 5px;"  ng-repeat="sel in selarr">
+                    <div class="col-md-1 col-xs-4 dtsel"  style="text-align: center"  ng-repeat="sel in selarr">
                     <button class="btn btn-default">
                         <i class="fa fa-calendar-o" aria-hidden="true"></i><br/>
                         {{sel.day}}<br/>
@@ -296,7 +296,7 @@
   <script type="text/javascript">
       // your code here
       $(".selectBtn").click(function(e){
-        alert("clicked");
+        //alert("clicked");
         ga("send", "event", "select", "click");
       });
 
