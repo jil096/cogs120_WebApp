@@ -113,10 +113,7 @@
 	<div class="topbar">
 		<ul class="w3-navbar w3-afBlue w3-wide w3-padding-8 w3-card-2">
          <li>
-            <a href="index.html" class="w3-margin-left w3-text-white"><img src="img/comlogo.png"/></a>
-        </li>
-    		<li>
-          <a href="index.html" class="w3-margin-left w3-text-white w3-hide-small"><b>UCSD</b> Commuters</a>
+            <a href="index.html" class="w3-margin-left w3-text-white"><img src="img/comlogo.png"/><b>UCSD</b> Commuters</a>
         </li>
         <!-- Float links to the right. Hide them on small screens -->
         <li class="w3-right ">
@@ -162,12 +159,11 @@
                     <div class="col-md-1 col-xs-6" ng-repeat="day in days">
                         <div class="hidden-md visible-xs" style="font-weight:bold">{{day}}</div>
                         <div class="col-md-12" ng-repeat="time in arr">
-                            <button type="button" class="btn btn-default selectBtn" id = "btnn" ng-model="sel1" 
-                            ng-click="select(sel1,day,time.start)" 
+                            <button type="button" class="btn btn-default timeBtn" ng-model="sel1" ng-click="select(sel1,day,time.start)" 
                             uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{time.start}}</button>
                             <button 
                             type="button" 
-                            class="btn btn-default selectBtn" 
+                            class="btn btn-default timeBtn" 
                             ng-model="sel2" 
                             ng-click="select(sel2,day,time.end)" 
                             uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{time.end}}</button>                            
@@ -197,7 +193,7 @@
         </footer>
     </div>
 
-  <script>
+   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -209,9 +205,15 @@
   </script>
   <script type="text/javascript">
       // your code here
-      $("#btnn").click(function(e){
+      /*$(".timeBtn").click(function(e){
         alert("clicked");
         ga("send", "event", "select", "click");
+      });*/
+      $(document).ready(function(){
+        $(".timeBtn").click(function(){
+          alert("clicked");
+          ga("send", "event", "select", "click");
+        });
       });
   </script>
 

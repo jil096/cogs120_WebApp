@@ -111,7 +111,14 @@
 
 .home{
     content: "";
-    background: url(../img/library.png);
+    background: url(../img/p_back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home1{
+    content: "";
+    background: url(../img/d_back.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
