@@ -1,3 +1,5 @@
+ @import 'https://fonts.googleapis.com/css?family=Aclonica';
+
 .container{
     width:100%;
     margin-bottom: 10px;
@@ -32,9 +34,6 @@
     color: #bbbbbb;
 }
 
-.userbox img{
-
-}
 
 .buttonbox{
 
@@ -55,7 +54,7 @@
     color:darkslategray;
     border-radius: 10px;
     font-size: 16px;
-    font-family: 'Lato', sans-serif;    
+    font-family : Avenir sans-serif;    
 }
 
 .buttonboxD{
@@ -63,10 +62,11 @@
     height:190px;    
   
 }
+
 .w3-afBlue,.w3-hover-white:hover
 {
     color:#000!important;
-    background-color:#466283!important
+    background-color:#133D6F!important
 }
 
 .topbar a{
@@ -128,4 +128,26 @@ footer{
     bottom: 0; 
     left: 0;
     width: 100%;
+}
+.navRightBtn a,
+.navRightBtn p{
+    font-family : Avenir; 
+    font-size : 15px;
+    font-weight: bold;
+    color:#fff!important;
+}
+.brandName,
+.brandName p{
+    font-family: 'Aclonica';
+}
+.profile h1,
+.profile h3,
+.profile p{
+    font-family: 'Apple SD gothic Neo', sans-serif;    
+}
+
+input[type="text"],
+label
+{
+    font-family: 'Apple SD gothic Neo', sans-serif;    
 }
