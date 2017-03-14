@@ -1,7 +1,4 @@
-<!doctype html>
-
 <html>
-
 <head>
 	<title>UCSD Commuters</title>
 	<meta charset="utf-8">
@@ -9,17 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />  
 	<!--script src="js/introHCI.js"></script-->
-  <link rel="stylesheet" href="css/modal/modal.css">
-  <style>.modal a.close-modal { top: 0;  right: 0; }</style>
-
-  <script  src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous"></script>  
-  <script src="js/jquery.modal.js" type="text/javascript" charset="utf-8"></script>    
-
-  <link rel="stylesheet" href="css/w3.css">
-    
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/stepBar.css">
-    <link rel="stylesheet" type="text/css" href="css/styleph.css" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>  
@@ -50,51 +37,31 @@
     </script>    
 </head>
 <body ng-app="myapp" ng-controller="UserCtrl" class="loginbg">
+<div class="overlay">
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-4 col-md-4 col-xs-12">
+                <div class="loginbox" ng-show="showuser==false">
+                <h3>Log In</h3>
+                <p>Enter username and password</p>
 
-  <div id="ex1" style="display:none;">
-    <div style = "margin: 30px">
-      <h3>Hello Commuters!</h3>
-      <p>This app is designed exclusively for the UCSD community, making life easier for commuters with and without cars through collaboration. The rides go from Superloop bus stops to on campus locations.</p>
-    
-      <head>If you are a Passenger, you can...</head>
-        <ul>
-          <li>Set up quarter long schedules with student drivers.</li>
-          <li>Request a lift anytime to campus.</li>
-          <li>Add drivers you've met to your friend list and see them more.</li>
-        </ul>
-        <p>We encourage you to offer goodies or other forms of compensation to the drivers as courtesy! It increases your chances of getting paired with a driver!</p>
-      <br>
-
-      <head>If you are a Driver, you can...</head>
-        <ul>
-          <li>Get to know amazing people while commuting.</li>
-          <li>Specify your preferred form of compensation.</li>
-          <li>Become a Passenger anytime.</li>
-        </ul>
+                <form action = "" method = "post">
+                <label>UserName  :</label><input ng-model="username" type = "text" name = "username" class = "box"/><br /><br />
+                <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
+                            
+                    </form>
+                <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+                <div>
+                    <button class="mybtn btn btn-default" ng-click="login()">Log in</button>
+                    
+                </div>
+                </div>
+        </div>
     </div>
-  </div>  
- <div class="row">
-     <div class="col-md-offset-4 col-md-4 col-xs-8">
-            <div class="loginbox" ng-show="showuser==false">
-            <h3>Log In</h3>
-            <p>Enter UCSD email and password</p>
-
-            <form action = "" method = "post">
-            <label>UserName  :</label><input ng-model="username" type = "text" name = "username" class = "box"/><br /><br />
-            <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
-                        
-                </form>
-            <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
-            <div>
-                <button class="mybtn btn btn-default" ng-click="login()">Log in</button>
-                
-            </div>
-            </div>
-     </div>
- </div>
-
 	<footer class="w3-container w3-theme-d5 w3-afBlue navRightBtn">
     	<p class= "w3-text-white">Team Boba -- Cogs 120 -- Winter2017</p>
     </footer>
+</div>
+</div>
 </body>
 </html>
