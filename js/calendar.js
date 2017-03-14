@@ -48,7 +48,7 @@
                     url   :'json/json.php',
                     data  :$scope.selarr
                 }).then(function(result){
-                    alert("Files saved at json/file.json");
+                    alert("Your selection has been saved !");
                     var oldpath = window.location.pathname;
                     var newpath = oldpath.replace("calendar.html","comp.html");
                     window.location.pathname = newpath;                    
