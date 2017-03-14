@@ -155,3 +155,13 @@ label
     font-family: Avenir sans-serif;
     font-size: 16px;
 }
+.loginbg{
+    background-image: url('../img/bglogin2.jpg');
+    background-size: cover;
+}
+.loginbox{
+    width: 310px;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.5);
+    margin:0 auto;
+}

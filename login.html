@@ -49,7 +49,7 @@
         });
     </script>    
 </head>
-<body ng-app="myapp" ng-controller="UserCtrl">
+<body ng-app="myapp" ng-controller="UserCtrl" class="loginbg">
 
   <div id="ex1" style="display:none;">
     <div style = "margin: 30px">
@@ -75,25 +75,26 @@
   </div>  
  <div class="row">
      <div class="col-md-offset-4 col-md-4 col-xs-8">
-        <div style = "margin:30px" ng-show="showuser==false">
-        <h3>Log In</h3>
-        <p>Enter UCSD email and password</p>
+            <div class="loginbox" ng-show="showuser==false">
+            <h3>Log In</h3>
+            <p>Enter UCSD email and password</p>
 
-        <form action = "" method = "post">
-        <label>UserName  :</label><input ng-model="username" type = "text" name = "username" class = "box"/><br /><br />
-        <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
-                    
-            </form>
-        <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
-        <div>
-            <button class="mybtn btn btn-default" ng-click="login()">Log in</button>
-            
-        </div>
-        </div>
+            <form action = "" method = "post">
+            <label>UserName  :</label><input ng-model="username" type = "text" name = "username" class = "box"/><br /><br />
+            <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
+                        
+                </form>
+            <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+            <div>
+                <button class="mybtn btn btn-default" ng-click="login()">Log in</button>
+                
+            </div>
+            </div>
      </div>
  </div>
 
-	<footer class="w3-container w3-theme-d5 w3-afBlue ">
+	<footer class="w3-container w3-theme-d5 w3-afBlue navRightBtn">
     	<p class= "w3-text-white">Team Boba -- Cogs 120 -- Winter2017</p>
+    </footer>
 </body>
 </html>
