@@ -175,3 +175,10 @@ label
   z-index: 10;
   background-color: rgba(255,255,255,0.5); /*dim the background*/
 }
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2), 
+only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2){ 
+    footer {
+        position: relative;
+    }
+}
